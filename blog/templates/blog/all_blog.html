@@ -10,7 +10,7 @@
         <h2>{{blog.title}}</h2>
       </a>
       <h5>{{blog.date|date:'M d Y'|upper}}</h5>
-      <h4>{{blog.description|truncatechars:50}}</h4>
+      <h4>{{blog.description|safe|truncatechars:50}}</h4>
     </div>
   </div>
   {% endfor %}
