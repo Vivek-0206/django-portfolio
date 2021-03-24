@@ -1,11 +1,13 @@
-<h1>Vivek2509 Blog</h1>
+{% extends 'projects/base.html' %} {% block content %} {% load static %}
+<div class="container">
+  <h2 class="text-center">Total blog {{blogs.count}}</h2>
 
-<h2>Total blog {{blogs.count}}</h2>
+  {% for blog in blogs %}
 
-{% for blog in blogs %}
+  <a href="{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a>
+  <h4>{{blog.date|date:'M d Y'|upper}}</h4>
+  <p>{{blog.description|truncatechars:50}}</p>
 
-<a href="{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a>
-<h4>{{blog.date|date:'M d Y'|upper}}</h4>
-<p>{{blog.description|truncatechars:50}}</p>
-
-{% endfor %}
+  {% endfor %}
+</div>
+{% endblock %}
