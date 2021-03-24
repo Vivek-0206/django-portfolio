@@ -1,13 +1,18 @@
 {% extends 'projects/base.html' %} {% block content %} {% load static %}
+
 <div class="container">
   <h2 class="text-center">Total blog {{blogs.count}}</h2>
 
   {% for blog in blogs %}
-
-  <a href="{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a>
-  <h4>{{blog.date|date:'M d Y'|upper}}</h4>
-  <p>{{blog.description|truncatechars:50}}</p>
-
+  <div class="row justify-content-center my-3">
+    <div class="col-md-10">
+      <a href="{% url 'blog:detail' blog.id %}">
+        <h2>{{blog.title}}</h2>
+      </a>
+      <h5>{{blog.date|date:'M d Y'|upper}}</h5>
+      <h4>{{blog.description|truncatechars:50}}</h4>
+    </div>
+  </div>
   {% endfor %}
 </div>
 {% endblock %}
