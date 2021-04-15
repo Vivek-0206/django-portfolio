@@ -1,4 +1,7 @@
-{% extends 'home/base.html' %} {% block content %} {% load static %}
+{% extends 'home/base.html' %} 
+{% block title %} Blog {% endblock title %} 
+{% block blogactive %} active{% endblock blogactive %}
+{% block content %} {% load static %}
 
 <div class="container">
   <h2 class="text-center">Total blog {{blogs.count}}</h2>

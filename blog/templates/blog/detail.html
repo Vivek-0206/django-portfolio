@@ -1,4 +1,7 @@
-{% extends 'home/base.html' %} {% block content %} {% load static %}
+{% extends 'home/base.html' %}
+{% block title %} {{blog.title}} {% endblock title %} 
+{% block blogactive %} active{% endblock blogactive %}
+{% block content %} {% load static %}
 <div class="container">
   <a role="button" class="btn btn-primary" href="{% url 'blog:all_blog' %}">
     back
