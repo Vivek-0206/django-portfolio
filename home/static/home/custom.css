@@ -2,6 +2,10 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+main {
+  min-height: 80vh;
+}
+
 #blogtitle {
   font-size: 6rem;
 }
